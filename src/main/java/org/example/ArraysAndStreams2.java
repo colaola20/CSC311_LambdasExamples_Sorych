@@ -11,12 +11,15 @@ public class ArraysAndStreams2 {
       // display original strings
       System.out.printf("Original strings: %s%n", Arrays.asList(strings));
 
-      System.out.printf("strings that start with a vowel (case-insensitive): %s%n",
+      System.out.printf("Strings that start with a vowel (case-insensitive): %s%n",
               Arrays.stream(strings).filter(s ->
                               "AEIOUaeiou".indexOf(s.charAt(0)) != -1)
                                       .collect(Collectors.toList())
 
               );
+
+      System.out.printf("Concatenating all the string into a single string: %s%n",
+              Arrays.stream(strings).collect(Collectors.joining(",")));
 
 //      // strings in uppercase
 //      System.out.printf("strings in uppercase: %s%n",
