@@ -11,25 +11,32 @@ public class ArraysAndStreams2 {
       // display original strings
       System.out.printf("Original strings: %s%n", Arrays.asList(strings));
 
-      // strings in uppercase
-      System.out.printf("strings in uppercase: %s%n",
-         Arrays.stream(strings)             
-               .map(String::toUpperCase)   
-               .collect(Collectors.toList()));
+      System.out.printf("strings that start with a vowel (case-insensitive): %s%n",
+              Arrays.stream(strings).filter(s ->
+                              "AEIOUaeiou".indexOf(s.charAt(0)) != -1)
+                                      .collect(Collectors.toList())
 
-      // strings less than "n" (case insensitive) sorted ascending
-      System.out.printf("strings less than n sorted ascending: %s%n",
-         Arrays.stream(strings)                            
-               .filter(s -> s.compareToIgnoreCase("n") < 0)
-               .sorted(String.CASE_INSENSITIVE_ORDER)
-               .collect(Collectors.toList()));             
+              );
 
-      // strings less than "n" (case insensitive) sorted descending
-      System.out.printf("strings less than n sorted descending: %s%n",
-         Arrays.stream(strings)
-               .filter(s -> s.compareToIgnoreCase("n") < 0)
-               .sorted(String.CASE_INSENSITIVE_ORDER.reversed())
-               .collect(Collectors.toList()));
+//      // strings in uppercase
+//      System.out.printf("strings in uppercase: %s%n",
+//         Arrays.stream(strings)
+//               .map(String::toUpperCase)
+//               .collect(Collectors.toList()));
+//
+//      // strings less than "n" (case insensitive) sorted ascending
+//      System.out.printf("strings less than n sorted ascending: %s%n",
+//         Arrays.stream(strings)
+//               .filter(s -> s.compareToIgnoreCase("n") < 0)
+//               .sorted(String.CASE_INSENSITIVE_ORDER)
+//               .collect(Collectors.toList()));
+//
+//      // strings less than "n" (case insensitive) sorted descending
+//      System.out.printf("strings less than n sorted descending: %s%n",
+//         Arrays.stream(strings)
+//               .filter(s -> s.compareToIgnoreCase("n") < 0)
+//               .sorted(String.CASE_INSENSITIVE_ORDER.reversed())
+//               .collect(Collectors.toList()));
    }
 } 
 

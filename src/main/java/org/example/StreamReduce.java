@@ -6,7 +6,7 @@ public class StreamReduce {
    public static void main(String[] args) {
       // sum the integers from 1 through 10
       System.out.printf("Sum of 1 through 10 is: %d%n", 
-         IntStream.rangeClosed(1, 10).sum());      
+         IntStream.rangeClosed(1, 10).filter(x->x%3==0).sum());
    } 
 } 
 
